@@ -1,0 +1,167 @@
+class  Test1 { 
+	
+	// 클래스이름은 첫글자는 대문자 파일명도 클래스와동일하게.
+	
+	public static void main(String[] args){ 
+		//접근지정자 public(아무나),private(클래스안에서만))
+		// 메소드(method : 명령어)
+		// main = 메소드이름(첫글자는 소문자)
+		// 두번째이름의 첫글자는 대문자 ex)Custom_Info
+
+		System.out.println("자바 첫시간입니다!");
+		System.out.print("두번째 프로그램\n");
+	}
+}
+
+------------------
+
+class Test2 
+{
+	public static void main(String[] args) 
+	{
+		int a = 20; //자료형(약 -21억~21억)
+		int b = 5;
+
+		int c,d;
+
+		System.out.println(a);
+		System.out.println(b);
+		//System.out.println(c);쓰레기값이들어가있음.
+
+		c = a + b;
+		System.out.println(c);
+		System.out.println(a + "+" + b + "=" + c);
+
+		d = a - b;
+		System.out.println(d);
+		System.out.println(a + "-" + b + "=" + d);
+
+		//jdk 5이상부터 사용가능
+
+		System.out.printf("%d + %d = %d\n",a,b,c);
+		System.out.printf("%d - %d = %d\n",a,b,d);
+	}
+}
+
+----------------
+class Test3 
+{
+	public static void main(String[] args) 
+	{
+		//실수 자료형(float, double)
+		int r = 10;
+		float area, length;
+
+		//소수점이나오면 무조건 double로 인식을하기때문에 float선언을꼭해줘야함.
+		//두개의 선언방식 (float)3.14 아니면 3.14f
+		//3.14 : 배정도형 실수
+		//3.14f : 반정도형 실수
+
+		area = r*r*(float)3.14;//면적구하기 
+		length = r*2*3.14f;//둘레
+		System.out.printf("반지름 : %d\n", r);
+		System.out.printf("넓이 : %.2f\n", area);
+		System.out.printf("둘레 : %.2f\n", length);
+
+		System.out.println("넓이 : " + area);
+		System.out.println("둘레 : " + length); //ln은 자릿수지정불가
+	}
+}
+
+---------------
+
+//import java.io.BufferedReader;
+//import java.io.InputStreamReader;
+//import java.io.IOException;
+import java.io.*;
+
+
+class Test4 
+{
+	public static void main(String[] args) throws IOException 	{
+		BufferedReader br = new BufferedReader(
+			new InputStreamReader(System.in));
+
+
+		//System.in : 키보드를통해 입력받은 1byte문자.
+		//InputStreamReader : 1byte 문자를 2바이트의 문자로 변환시켜줌
+		//BufferedReader : 메모리상에 저장 공간(br)을 만들고 인풋에서읽어낸값을 br에2바이트의 문자로 저장하는역할
+
+
+		int r;
+		double area, length;
+
+		System.out.print("반지름 ? ");
+		r = Integer.parseInt(br.readLine());
+
+		area = r*r*3.14;
+		length = r*2*3.14;
+
+		System.out.printf("반지름 : %d, 넓이 : %g, 둘레 : %g\n", r,area,length);
+
+
+	}
+}
+
+------------------
+
+import java.io.*;
+
+class  Test5
+{
+	public static void main(String[] args) throws IOException{
+		//이름,국어,영어,총점 받을거임
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		String name;
+		int kor,eng,sum;
+
+		System.out.print("이름 : ");
+			name = br.readLine();
+		System.out.print("국어 : ");
+			kor = Integer.parseInt(br.readLine()); 
+		System.out.print("영어 : ");
+			eng = Integer.parseInt(br.readLine());
+
+		sum = kor + eng;
+
+		System.out.println(name + " 님 총점은 : " + sum + "점입니다.");
+	}
+}
+
+------------------------
+
+import java.io.*;
+
+class  Test7
+{
+	public static void main(String[] args) throws IOException{
+		
+		//밑변과 높이를 입력받아 삼각형의 면적을 구하시오
+		//삼각형의 면적을 구하시오
+		//넓이 밑변 * 높이 / 2
+		//밑변 ?
+		//높이 ?
+		//넓이: ?
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+		int width, height;
+		double area;
+
+		System.out.println("밑변은 ? ");
+		width = Integer.parseInt(br.readLine());
+		System.out.println("높이는 ? ");
+		height = Integer.parseInt(br.readLine());
+
+		area = (double)width * height / 2;
+
+		System.out.printf("넓이는 %g 입니다", area);
+
+
+
+
+	}
+}
+
